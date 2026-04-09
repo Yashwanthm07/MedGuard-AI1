@@ -1,0 +1,18 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+pydantic==2.5.0
+python-dotenv==1.0.0
+requests>=2.31.0
+# Free local OCR enhancement stack
+paddleocr>=3.4.0
+# EasyOCR is optional due large torch dependency; install when disk/GPU allows.
+easyocr>=1.7.2
+# Vision and Image Processing
+opencv-python>=4.8.0
+pytesseract==0.3.10
+pillow>=11.0.0
+numpy>=1.26.0
+# Async and Database
+aiofiles==23.2.1
+motor==3.1.1
