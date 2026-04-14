@@ -1,22 +1,11 @@
 import axios from 'axios';
 
-function normalizeApiBaseUrl(rawUrl) {
-  try {
-    const parsed = new URL(rawUrl);
-    if (parsed.hostname === '0.0.0.0') {
-      parsed.hostname = 'localhost';
-    }
-    return parsed.origin;
-  } catch {
-    return 'http://localhost:8000';
-  }
-}
-
-const defaultBase = `http://${window.location.hostname === '0.0.0.0' ? 'localhost' : window.location.hostname}:8000`;
-const API_BASE_URL = normalizeApiBaseUrl(import.meta.env.VITE_API_BASE_URL || defaultBase);
+// Use relative URLs to go through Vite proxy in development
+// In production, the frontend and backend will be served together
+const API_BASE_URL = '/api';
 
 const apiClient = axios.create({
-  baseURL: `${API_BASE_URL}/api`,
+  baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
