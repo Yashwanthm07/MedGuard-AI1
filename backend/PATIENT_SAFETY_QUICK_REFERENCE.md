@@ -1,6 +1,6 @@
 # Patient Safety Engine - Quick Reference Guide
 
-## ✅ Status: **FULLY OPERATIONAL**
+##  Status: **FULLY OPERATIONAL**
 
 ---
 
@@ -34,7 +34,7 @@ Expected Result: **CRITICAL risk** (bleeding risk)
 cd backend
 python test_patient_safety_api.py
 ```
-Expected: All 5 API tests should PASS ✅
+Expected: All 5 API tests should PASS 
 
 ---
 
@@ -43,19 +43,19 @@ Expected: All 5 API tests should PASS ✅
 cd backend
 python test_patient_safety.py
 ```
-Expected: 7-9 tests should PASS ✅
+Expected: 7-9 tests should PASS 
 
 ---
 
 ## What the Engine Does
 
-### ✅ Detects
-- 🚨 **Drug-Drug Interactions** (e.g., Warfarin + Aspirin = SEVERE)
-- ⚠️ **Medication-Allergy Concerns** (e.g., Penicillin + Penicillin allergy)
-- 👴 **Age-Related Risks** (young: pediatric dosing, old: sensitivity)
-- 📊 **Overall Risk Level**: LOW, MODERATE, HIGH, CRITICAL
+### Detects
+- **Drug-Drug Interactions** (e.g., Warfarin + Aspirin = SEVERE)
+-  **Medication-Allergy Concerns** (e.g., Penicillin + Penicillin allergy)
+-  **Age-Related Risks** (young: pediatric dosing, old: sensitivity)
+-  **Overall Risk Level**: LOW, MODERATE, HIGH, CRITICAL
 
-### ✅ Returns
+###  Returns
 - `risk_level` - LOW | MODERATE | HIGH | CRITICAL
 - `risk_score` - 0 to 100
 - `interactions` - List of drug-drug interactions
@@ -93,7 +93,7 @@ Query params:
 
 ## Test Scenarios
 
-### ✅ Test 1: Dangerous Interaction
+###  Test 1: Dangerous Interaction
 ```json
 {
   "age": 65,
@@ -103,7 +103,7 @@ Query params:
 ```
 Expected: **CRITICAL** (risk_score: 80)
 
-### ✅ Test 2: Elderly Patient
+###  Test 2: Elderly Patient
 ```json
 {
   "age": 75,
@@ -113,7 +113,7 @@ Expected: **CRITICAL** (risk_score: 80)
 ```
 Expected: **LOW** (but flags elderly sensitivity)
 
-### ✅ Test 3: Allergy Conflict
+###  Test 3: Allergy Conflict
 ```json
 {
   "age": 45,
@@ -123,13 +123,13 @@ Expected: **LOW** (but flags elderly sensitivity)
 ```
 Expected: **MODERATE** (risk_score: 25+)
 
-### ✅ Test 4: No Data
+###  Test 4: No Data
 ```json
 {}
 ```
 Expected: **LOW** (no risk, no data)
 
-### ✅ Test 5: Safe Medications
+### Test 5: Safe Medications
 ```json
 {
   "age": 50,
@@ -164,20 +164,20 @@ Expected: **LOW** (no interactions detected)
 
 ## Troubleshooting
 
-### ❓ Getting "Connection Refused"?
+###  Getting "Connection Refused"?
 → Start backend: `python backend/main.py`
 
-### ❓ Getting 404 Not Found?
+###  Getting 404 Not Found?
 → Check URL: Should be `/api/patient-safety` not just `/patient-safety`
 
-### ❓ Want Better Results?
+### Want Better Results?
 → Add API keys to `.env`:
 ```
 OPENAI_API_KEY=sk-...
 GOOGLE_API_KEY=...
 ```
 
-### ❓ Test Data Not Working?
+### Test Data Not Working?
 → Ensure JSON is valid (use JSONLint.com to verify)
 
 ---
@@ -205,13 +205,13 @@ curl "http://localhost:8000/api/patient-safety/check?medications=Warfarin,Aspiri
 
 ## Test Report Location
 
-📄 Full test report: `backend/PATIENT_SAFETY_TEST_REPORT.md`
+ Full test report: `backend/PATIENT_SAFETY_TEST_REPORT.md`
 
 ---
 
 ## Summary
 
-✅ **Patient Safety Engine Status: FULLY OPERATIONAL**
+ **Patient Safety Engine Status: FULLY OPERATIONAL**
 - Detects critical interactions (Warfarin + Aspirin = CRITICAL)
 - Identifies allergy conflicts
 - Flags age-related concerns
@@ -220,10 +220,10 @@ curl "http://localhost:8000/api/patient-safety/check?medications=Warfarin,Aspiri
 - Production ready for pilot use
 
 **Next Steps:**
-1. ✅ Test via http://localhost:8000/api/docs
-2. ✅ Integrate into frontend patient safety page
-3. 📌 (Optional) Add OpenAI API key for enhanced analysis
-4. 📌 (Optional) Integrate comprehensive drug database
+1. Test via http://localhost:8000/api/docs
+2. Integrate into frontend patient safety page
+3. (Optional) Add OpenAI API key for enhanced analysis
+4. (Optional) Integrate comprehensive drug database
 
 ---
 
