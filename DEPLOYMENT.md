@@ -1,6 +1,6 @@
 # MedGuard AI - Deployment & Running Guide
 
-## ⚡ Quick Start (Local Development)
+##  Quick Start (Local Development)
 
 ### Prerequisites
 - Python 3.9+
@@ -56,7 +56,7 @@ Visit: http://localhost:5173
 
 ---
 
-## 🚀 Production Deployment
+##  Production Deployment
 
 ### Backend - Render.com
 
@@ -113,7 +113,7 @@ VITE_API_BASE_URL = https://medguard-backend.onrender.com
 
 ---
 
-## 📋 Checklist Before Production
+##  Checklist Before Production
 
 - [ ] Replace dummy Anthropic key with real key
 - [ ] Test medicine scanning with real images
@@ -130,7 +130,7 @@ VITE_API_BASE_URL = https://medguard-backend.onrender.com
 
 ---
 
-## 🧪 Testing Endpoints
+##  Testing Endpoints
 
 ### Test Medicine Analysis
 ```bash
@@ -193,7 +193,7 @@ pip install pytesseract
 
 ---
 
-## 📊 Monitoring
+##  Monitoring
 
 ### Backend Logs
 - Render: View in Render dashboard
@@ -209,7 +209,7 @@ pip install pytesseract
 
 ---
 
-## 💾 Database Setup (Optional)
+## Database Setup (Optional)
 
 For production with persistent storage:
 
@@ -231,7 +231,7 @@ Then update `main.py` to use SQLAlchemy for persistent storage.
 
 ---
 
-## 💬 Support
+##  Support
 
 For issues:
 1. Check swagger docs: http://localhost:8000/api/docs
